@@ -158,21 +158,21 @@ services:
     restart: unless-stopped
   #  ================================== Confluent REST Proxy ========================================== #}	
   kafka-rest-1:
-    image: confluentinc/cp-kafka-rest:5.4.0	
-    container_name: kafka-rest-1	
-    hostname: kafka-rest-1	
-    labels:	
-      com.mdps.service.restapi.url: http://${PUBLIC_IP}:18086	
-    depends_on:	
-      - kafka-1	
-      - schema-registry-1	
-    ports:	
-      - 18086:8086	
-    environment:	
-      KAFKA_REST_BOOTSTRAP_SERVERS: PLAINTEXT://kafka-1:19092	
-      KAFKA_REST_LISTENERS: http://0.0.0.0:8086	
-      KAFKA_REST_SCHEMA_REGISTRY_URL: http://schema-registry-1:8081	
-      KAFKA_REST_HOST_NAME: kafka-rest-1	
+    image: confluentinc/cp-kafka-rest:5.4.0
+    container_name: kafka-rest-1
+    hostname: kafka-rest-1
+    labels:
+      com.mdps.service.restapi.url: http://${PUBLIC_IP}:18086
+    depends_on:
+      - kafka-1
+      - schema-registry-1
+    ports:
+      - 18086:8086
+    environment:
+      KAFKA_REST_BOOTSTRAP_SERVERS: PLAINTEXT://kafka-1:19092
+      KAFKA_REST_LISTENERS: http://0.0.0.0:8086
+      KAFKA_REST_SCHEMA_REGISTRY_URL: http://schema-registry-1:8081
+      KAFKA_REST_HOST_NAME: kafka-rest-1
     restart: unless-stopped
   #  ================================== Kafka Topics UI ========================================== #}
   kafka-topics-ui:
