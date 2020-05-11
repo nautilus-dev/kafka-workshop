@@ -157,7 +157,7 @@ services:
       SCHEMAREGISTRY_URL: http://${PUBLIC_IP}:8081
     restart: unless-stopped
   #  ================================== Confluent REST Proxy ========================================== #}	
-  kafka-rest-1:	
+  kafka-rest-1:
     image: confluentinc/cp-kafka-rest:5.4.0	
     container_name: kafka-rest-1	
     hostname: kafka-rest-1	
